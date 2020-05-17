@@ -10,11 +10,11 @@ export class WordsService {
     this.words = [];
   }
 
-  getWords(): Word[] {
+  async getWords(): Promise<Word[]> {
     return this.words;
   }
 
-  addWord(word: Word) {
+  async addWord(word: Word) {
     this.words.push(word);
   }
 }
