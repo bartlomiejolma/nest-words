@@ -51,6 +51,12 @@
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format",
+      "pre-push": "yarn test"
+    }
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
