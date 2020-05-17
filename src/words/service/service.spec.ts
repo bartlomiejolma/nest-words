@@ -1,5 +1,5 @@
-import { WordsService } from './service';
-import { Word } from './word';
+import { WordsService } from '.';
+import { Word } from '../word';
 
 describe('WordsService', () => {
   describe('getWords', () => {

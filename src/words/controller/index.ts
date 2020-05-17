@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
-import { WordsService } from './service';
-import { CreateWordDto } from './create-word.dto';
-import { Word } from './word';
+import { WordsService } from '../service';
+import { CreateWordDto } from '../dtos/create-word.dto';
+import { Word } from '../word';
 
 @Controller('words')
 export class WordsController {
