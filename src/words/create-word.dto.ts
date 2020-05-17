@@ -1,3 +1,3 @@
 export class CreateWordDto {
-    name: string;
-  }
+  name: string;
+}
