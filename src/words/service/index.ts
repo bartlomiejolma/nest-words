@@ -1,20 +1,20 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject } from '@nestjs/common';
 
+import { Repository } from 'typeorm';
 import { Word } from '../word';
 
 @Injectable()
 export class WordsService {
-  private words: Word[];
-
-  constructor() {
-    this.words = [];
-  }
+  constructor(
+    @Inject('WORD_REPOSITORY')
+    private wordRepository: Repository<Word>,
+  ) {}
 
   async getWords(): Promise<Word[]> {
-    return this.words;
+    return this.wordRepository.find();
   }
 
   async addWord(word: Word) {
-    this.words.push(word);
+    this.wordRepository.insert(word);
   }
 }
