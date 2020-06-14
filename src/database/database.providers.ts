@@ -1,8 +1,10 @@
 import { createConnection } from 'typeorm';
 
+import { DATABASE_CONNECTION } from '../consts';
+
 export const databaseProviders = [
   {
-    provide: 'DATABASE_CONNECTION',
+    provide: DATABASE_CONNECTION,
     useFactory: async () =>
       await createConnection({
         type: 'postgres',

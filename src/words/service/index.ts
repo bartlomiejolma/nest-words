@@ -6,7 +6,7 @@ import { Word } from '../word';
 @Injectable()
 export class WordsService {
   constructor(
-    @Inject('WORD_REPOSITORY')
+    @Inject('WORDS_REPOSITORY')
     private wordRepository: Repository<Word>,
   ) {}
 
