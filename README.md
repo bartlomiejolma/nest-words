@@ -35,3 +35,9 @@ $ yarn test:e2e
 # test coverage
 $ yarn test:cov
 ```
+
+## Database
+
+PostgreSQL database is used.
+
+Provide credentials following the .env.sample file
