@@ -6,7 +6,7 @@ import { AppModule } from './../src/app.module';
 describe('AppController (e2e)', () => {
   let app: INestApplication;
 
-  beforeEach(async () => {
+  beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
@@ -19,5 +19,12 @@ describe('AppController (e2e)', () => {
     return request(app.getHttpServer())
       .get('/words')
       .expect(200);
+  });
+
+  it('/words (POST)', () => {
+    return request(app.getHttpServer())
+      .post('/words')
+      .send({ name: 'test' })
+      .expect(201);
   });
 });
