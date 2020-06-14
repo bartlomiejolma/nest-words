@@ -40,4 +40,12 @@ $ yarn test:cov
 
 PostgreSQL database is used.
 
+```
+$ psql -U USERNAME
+
+postgres-# CREATE DATABASE nest-words
+
+yarn add @nestjs/config @nestjs/typeorm typeorm pg
+```
+
 Provide credentials following the .env.sample file
