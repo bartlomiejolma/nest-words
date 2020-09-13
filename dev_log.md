@@ -87,6 +87,12 @@ When adding the test for the e2e found that this test was disabled because of th
 
 Issue with absolute imports there
 
+setup node github action seem to be supporting yarn
+https://github.com/marketplace/actions/setup-node-js-environment
+
+no `ci` command for yarn, use install instead
+
+
 
 Validation is done over the app.module, but test is using the module without the Pipe
 
