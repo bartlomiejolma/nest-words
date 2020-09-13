@@ -14,7 +14,7 @@ class InMemoryRepository<T> {
   find() {
     return this.entries;
   }
-  insert(entry: T) {
+  save(entry: T) {
     this.entries.push(entry);
   }
 }
