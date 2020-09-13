@@ -27,3 +27,30 @@ https://docs.nestjs.com/recipes/sql-typeorm
 
 Probably I should switch to this usage fo TypeORM:
 https://docs.nestjs.com/techniques/database
+
+Use, the global TypeORM
+
+
+Problem with user login
+
+Does config work?
+isGlobal did not help https://docs.nestjs.com/techniques/configuration#use-module-globally
+
+It seem to not work from the beginning
+
+How to make the TypeOrmModule get config from ConfigService? 
+
+Here they use directly `dotenv`
+https://medium.com/@gausmann.simon/nestjs-typeorm-and-postgresql-full-example-development-and-project-setup-working-with-database-c1a2b1b11b8f
+
+going through the list:
+https://awesomeopensource.com/project/juliandavidmr/awesome-nestjs
+
+
+------
+For now droping the idea of usage:
+https://docs.nestjs.com/techniques/database
+
+There are problems with the connection when using this approach
+
+So, stick withouth @nestjs/typeorm
