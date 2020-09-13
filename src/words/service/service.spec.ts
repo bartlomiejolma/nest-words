@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { WordsService } from '.';
 import { Word } from '../word';
+import { Definition } from '../definition';
 
 import { WORDS_REPOSITORY } from '../../consts';
 
@@ -42,7 +43,8 @@ describe('WordsService', () => {
 
   describe('addWord', () => {
     it('should return newly added word', async () => {
-      const word: Word = { name: 'foo' };
+      const definitions: Definition[] = [{ text: 'bar' }];
+      const word: Word = { name: 'foo', definitions };
 
       await wordsService.addWord(word);
 
