@@ -54,3 +54,13 @@ https://docs.nestjs.com/techniques/database
 There are problems with the connection when using this approach
 
 So, stick withouth @nestjs/typeorm
+
+
+Added defintions to each word
+
+Changes in 3 files
+
+In entity many to one relation:
+https://typeorm.io/#/many-to-one-one-to-many-relations
+
+Can I use single interface for all of them?
