@@ -5,17 +5,17 @@ import { Definition } from '../definition';
 
 import { WORDS_REPOSITORY } from '../../consts';
 
-class InMemoryRepository {
-  private words: Word[];
+class InMemoryRepository<T> {
+  private entries: T[];
 
   constructor() {
-    this.words = [];
+    this.entries = [];
   }
   find() {
-    return this.words;
+    return this.entries;
   }
-  insert(word: Word) {
-    this.words.push(word);
+  insert(entry: T) {
+    this.entries.push(entry);
   }
 }
 describe('WordsService', () => {
@@ -27,7 +27,8 @@ describe('WordsService', () => {
         WordsService,
         {
           provide: WORDS_REPOSITORY,
-          useClass: InMemoryRepository,
+          useFactory: () => new InMemoryRepository<Word>(),
+        },
         },
       ],
     }).compile();
