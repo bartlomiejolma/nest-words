@@ -1,7 +1,7 @@
 import { Connection, Repository } from 'typeorm';
 import { WordEntity } from './words.entity';
 
-import { WORDS_REPOSITORY, DATABASE_CONNECTION } from '../consts';
+import { WORDS_REPOSITORY, DATABASE_CONNECTION } from 'src/consts';
 
 export const wordsProviders = [
   {
