@@ -1,9 +1,9 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Definition } from '../definition';
+import { Word } from '../word';
 import { DefinitionEntity } from './definitions.entity';
 
 @Entity()
-export class WordEntity {
+export class WordEntity implements Word {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -14,5 +14,5 @@ export class WordEntity {
     type => DefinitionEntity,
     definition => definition.word,
   )
-  definitions: Definition[];
+  definitions: DefinitionEntity[];
 }
