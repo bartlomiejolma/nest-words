@@ -17,6 +17,11 @@ was not needed (it broke imports in the source files)
 
 Now, the only relative import is in the test.
 
+Fix this import now. 
+
+Keep, the import as it is.
+The `roots` key list all things to add to `rootDir`
+
 I was following this guide:
 https://docs.nestjs.com/recipes/sql-typeorm
 
