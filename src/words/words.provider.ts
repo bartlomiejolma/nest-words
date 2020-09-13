@@ -5,7 +5,7 @@ import {
   WORDS_REPOSITORY,
   DATABASE_CONNECTION,
   DEFINITIONS_REPOSITORY,
-} from 'src/consts';
+} from '../consts';
 import { DefinitionEntity } from './entities/definitions.entity';
 
 export const wordsProviders = [

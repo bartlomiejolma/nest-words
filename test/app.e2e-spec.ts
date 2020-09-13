@@ -27,4 +27,8 @@ describe('AppController (e2e)', () => {
       .send({ name: 'test' })
       .expect(201);
   });
+
+  afterAll(async () => {
+    await app.close();
+  });
 });

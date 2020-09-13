@@ -77,3 +77,20 @@ https://typeorm.io/#/relations/cascades
 Find with relations to return defintions too:
 https://typeorm.io/#/find-options
 
+
+Added validation for a simple rule following the guideline:
+https://docs.nestjs.com/techniques/validation
+
+(added class-validator and class-transformer)
+
+When adding the test for the e2e found that this test was disabled because of the package.json jest root config.
+
+Issue with absolute imports there
+
+
+Validation is done over the app.module, but test is using the module without the Pipe
+
+Suggested solution:
+https://stackoverflow.com/questions/60819612/how-to-test-validation-pipe-is-throwing-the-expect-error-for-improperly-shaped-r
+
+skip this test for now.
