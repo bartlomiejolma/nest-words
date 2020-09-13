@@ -64,3 +64,16 @@ In entity many to one relation:
 https://typeorm.io/#/many-to-one-one-to-many-relations
 
 Can I use single interface for all of them?
+
+Switched to implementing the interface.
+
+Defintions does not get saved in the db
+
+needs to provide the repository.
+
+Do not go with the cascading option for save.
+https://typeorm.io/#/relations/cascades
+
+Find with relations to return defintions too:
+https://typeorm.io/#/find-options
+

@@ -3,7 +3,7 @@ import { WordsService } from '.';
 import { Word } from '../word';
 import { Definition } from '../definition';
 
-import { WORDS_REPOSITORY } from '../../consts';
+import { WORDS_REPOSITORY, DEFINITIONS_REPOSITORY } from '../../consts';
 
 class InMemoryRepository<T> {
   private entries: T[];
@@ -29,6 +29,9 @@ describe('WordsService', () => {
           provide: WORDS_REPOSITORY,
           useFactory: () => new InMemoryRepository<Word>(),
         },
+        {
+          provide: DEFINITIONS_REPOSITORY,
+          useFactory: () => new InMemoryRepository<Definition>(),
         },
       ],
     }).compile();
@@ -51,7 +54,7 @@ describe('WordsService', () => {
 
       const words = await wordsService.getWords();
 
-      expect(words[words.length - 1]).toBe(word);
+      expect(words[words.length - 1]).toEqual(word);
     });
   });
 });
