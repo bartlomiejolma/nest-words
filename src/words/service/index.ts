@@ -2,6 +2,7 @@ import { Injectable, Inject } from '@nestjs/common';
 
 import { Repository } from 'typeorm';
 import { Definition } from '../definition';
+import { DefinitionEntity } from '../entities/definitions.entity';
 import { Word } from '../word';
 
 @Injectable()
@@ -18,9 +19,13 @@ export class WordsService {
   }
 
   async addWord(word: Word) {
+    const wordEntity = await this.wordRepository.save(word);
     for (const definition of word.definitions) {
-      this.definitionsRepository.insert(definition);
+      const definitionEntity = new DefinitionEntity();
+      definitionEntity.word = wordEntity;
+      definitionEntity.text = definition.text;
+      console.log(definitionEntity);
+      await this.definitionsRepository.save(definitionEntity);
     }
-    this.wordRepository.insert(word);
   }
 }
