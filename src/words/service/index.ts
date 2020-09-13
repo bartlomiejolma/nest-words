@@ -14,7 +14,7 @@ export class WordsService {
   ) {}
 
   async getWords(): Promise<Word[]> {
-    return this.wordRepository.find();
+    return this.wordRepository.find({ relations: ['definitions'] });
   }
 
   async addWord(word: Word) {
