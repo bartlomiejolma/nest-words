@@ -20,11 +20,10 @@ export class WordsService {
 
   async addWord(word: Word) {
     const wordEntity = await this.wordRepository.save(word);
-    for (const definition of word.definitions) {
+    for (const definition of word.definitions || []) {
       const definitionEntity = new DefinitionEntity();
       definitionEntity.word = wordEntity;
       definitionEntity.text = definition.text;
-      console.log(definitionEntity);
       await this.definitionsRepository.save(definitionEntity);
     }
   }
