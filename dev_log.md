@@ -87,16 +87,17 @@ When adding the test for the e2e found that this test was disabled because of th
 
 Issue with absolute imports there
 
-setup node github action seem to be supporting yarn
-https://github.com/marketplace/actions/setup-node-js-environment
-
-no `ci` command for yarn, use install instead
-
-
-
 Validation is done over the app.module, but test is using the module without the Pipe
 
 Suggested solution:
 https://stackoverflow.com/questions/60819612/how-to-test-validation-pipe-is-throwing-the-expect-error-for-improperly-shaped-r
 
 skip this test for now.
+
+
+setup node github action seem to be supporting yarn
+https://github.com/marketplace/actions/setup-node-js-environment
+
+no `ci` command for yarn, use install instead
+
+how to hande e2e test without db an with connection error?
