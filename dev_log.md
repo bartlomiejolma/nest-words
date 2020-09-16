@@ -101,3 +101,20 @@ https://github.com/marketplace/actions/setup-node-js-environment
 no `ci` command for yarn, use install instead
 
 how to hande e2e test without db an with connection error?
+
+set up the database as github action
+
+https://freek.dev/1590-how-to-use-a-mysql-database-on-github-actions
+
+https://medium.com/@ldarren/number-of-ways-to-setup-database-in-github-actions-2cd48df9faae
+
+specific action for postgres
+https://github.com/marketplace/actions/setup-postgresql
+https://github.com/Harmon758/postgresql-action/blob/master/action.yml
+
+Must setup the db host, user, pwd
+
+Use env. variables in yaml
+https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
+
+Now it all works.
