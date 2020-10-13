@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import * as Joi from '@hapi/joi';
 
 import { WordsModule } from './words';
+import { DatabaseModule } from './database/database.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { WordsModule } from './words';
         PORT: Joi.number().default(3000),
       }),
     }),
+    DatabaseModule,
   ],
 })
 export class AppModule {}
