@@ -124,6 +124,8 @@ Added waterfall test for testing complex logic
 
 Added faker to the test for different generated words.
 
+https://stackoverflow.com/questions/45278398/how-to-use-faker-js-in-typescript
+
 Next:
 Proper typeOrm integration
 
@@ -149,3 +151,6 @@ Mocking the database connection
 
 Speeding up tests
 https://megafauna.dev/jest-speed-up-slow-test-suites/
+
+add sort imports rule
+
