@@ -128,3 +128,10 @@ Next:
 Proper typeOrm integration
 
 JWT authentication with 3rd party integration (Firebase?)
+
+Following this:
+https://wanago.io/2020/05/18/api-nestjs-postgresql-typeorm/
+
+https://docs.nestjs.com/techniques/configuration#schema-validation
+
+added joi schema validation
