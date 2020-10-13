@@ -3,6 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { waterfall } from 'async';
+import * as faker from 'faker';
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;
@@ -30,7 +31,7 @@ describe('AppController (e2e)', () => {
   });
 
   it('/words (POST) with verify', () => {
-    const newWord = { name: 'test' };
+    const newWord = { name: faker.random.word() };
     return waterfall([
       cb =>
         request(app.getHttpServer())
@@ -43,8 +44,8 @@ describe('AppController (e2e)', () => {
           .expect(200, cb),
       (results, cb) => {
         const { body } = results;
-        console.log(body);
         expect(body.length).toBeGreaterThan(0);
+        body.sort((firstWord, secondWord) => firstWord.id - secondWord.id);
         expect(body[body.length - 1]).toEqual(expect.objectContaining(newWord));
         cb(null, results);
       },
