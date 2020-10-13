@@ -118,3 +118,13 @@ Use env. variables in yaml
 https://docs.github.com/en/actions/configuring-and-managing-workflows/using-environment-variables
 
 Now it all works.
+
+
+Added waterfall test for testing complex logic
+
+Added faker to the test for different generated words.
+
+Next:
+Proper typeOrm integration
+
+JWT authentication with 3rd party integration (Firebase?)
