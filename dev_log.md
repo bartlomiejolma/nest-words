@@ -156,3 +156,6 @@ add sort imports rule
 
 Authentication
 https://docs.nestjs.com/techniques/authentication
+
+got to JWT, 
+need to store users with hashed pwd in db.
