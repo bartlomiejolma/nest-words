@@ -37,3 +37,5 @@ jobs:
         DATABASE_NAME: nest_words
         DATABASE_USER: postgres
         DATABASE_PASSWORD: postgres
+        DATABASE_PORT: 5432
+        DATABASE_HOST: localhost

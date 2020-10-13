@@ -146,3 +146,6 @@ Details described:
 https://wanago.io/2020/07/06/api-nestjs-unit-tests/
 
 Mocking the database connection
+
+Speeding up tests
+https://megafauna.dev/jest-speed-up-slow-test-suites/
