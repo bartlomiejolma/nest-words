@@ -4,6 +4,7 @@ import * as Joi from '@hapi/joi';
 
 import { WordsModule } from './words';
 import { DatabaseModule } from './database/database.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { DatabaseModule } from './database/database.module';
       }),
     }),
     DatabaseModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
