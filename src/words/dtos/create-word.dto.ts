@@ -1,4 +1,5 @@
 import { IsNotEmpty } from 'class-validator';
+
 import { Word } from '../word';
 import { DefinitionDto } from './definition.dto';
 

@@ -1,10 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
+import { getRepositoryToken } from '@nestjs/typeorm';
+
 import { WordsService } from '.';
 import { Word } from '../word';
 import { Definition } from '../definition';
-
-import { getRepositoryToken } from '@nestjs/typeorm';
-
 import { WordEntity } from '../entities/words.entity';
 import { DefinitionEntity } from '../entities/definitions.entity';
 

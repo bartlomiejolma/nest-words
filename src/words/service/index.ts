@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
+
 import { Definition } from '../definition';
 import { DefinitionEntity } from '../entities/definitions.entity';
 import { WordEntity } from '../entities/words.entity';

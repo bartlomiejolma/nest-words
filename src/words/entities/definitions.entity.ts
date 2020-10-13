@@ -1,4 +1,5 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
+
 import { Definition } from '../definition';
 import { Word } from '../word';
 import { WordEntity } from './words.entity';
