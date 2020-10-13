@@ -135,3 +135,14 @@ https://wanago.io/2020/05/18/api-nestjs-postgresql-typeorm/
 https://docs.nestjs.com/techniques/configuration#schema-validation
 
 added joi schema validation
+
+Most part worked. 
+Had to stop using the custom words providers.
+
+(To be deleted)
+
+The change in the unit test was important.
+Details described:
+https://wanago.io/2020/07/06/api-nestjs-unit-tests/
+
+Mocking the database connection
