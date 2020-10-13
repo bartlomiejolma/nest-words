@@ -3,7 +3,11 @@ import { WordsService } from '.';
 import { Word } from '../word';
 import { Definition } from '../definition';
 
+import { getRepositoryToken } from '@nestjs/typeorm';
+
 import { WORDS_REPOSITORY, DEFINITIONS_REPOSITORY } from '../../consts';
+import { WordEntity } from '../entities/words.entity';
+import { DefinitionEntity } from '../entities/definitions.entity';
 
 class InMemoryRepository<T> {
   private entries: T[];
@@ -26,11 +30,11 @@ describe('WordsService', () => {
       providers: [
         WordsService,
         {
-          provide: WORDS_REPOSITORY,
+          provide: getRepositoryToken(WordEntity),
           useFactory: () => new InMemoryRepository<Word>(),
         },
         {
-          provide: DEFINITIONS_REPOSITORY,
+          provide: getRepositoryToken(DefinitionEntity),
           useFactory: () => new InMemoryRepository<Definition>(),
         },
       ],
