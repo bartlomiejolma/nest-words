@@ -1,16 +1,18 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 
+import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Definition } from '../definition';
 import { DefinitionEntity } from '../entities/definitions.entity';
+import { WordEntity } from '../entities/words.entity';
 import { Word } from '../word';
 
 @Injectable()
 export class WordsService {
   constructor(
-    @Inject('WORDS_REPOSITORY')
+    @InjectRepository(WordEntity)
     private wordRepository: Repository<Word>,
-    @Inject('DEFINITIONS_REPOSITORY')
+    @InjectRepository(DefinitionEntity)
     private definitionsRepository: Repository<Definition>,
   ) {}
 
