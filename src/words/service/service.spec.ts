@@ -5,7 +5,6 @@ import { Definition } from '../definition';
 
 import { getRepositoryToken } from '@nestjs/typeorm';
 
-import { WORDS_REPOSITORY, DEFINITIONS_REPOSITORY } from '../../consts';
 import { WordEntity } from '../entities/words.entity';
 import { DefinitionEntity } from '../entities/definitions.entity';
 
