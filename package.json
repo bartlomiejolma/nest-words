@@ -69,6 +69,12 @@
       "pre-push": "yarn test"
     }
   },
+  "lint-staged": {
+    "*": [
+      "lint",
+      "format"
+    ]
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
