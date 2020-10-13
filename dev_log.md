@@ -154,3 +154,5 @@ https://megafauna.dev/jest-speed-up-slow-test-suites/
 
 add sort imports rule
 
+Authentication
+https://docs.nestjs.com/techniques/authentication
