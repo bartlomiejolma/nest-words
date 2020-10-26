@@ -159,3 +159,13 @@ https://docs.nestjs.com/techniques/authentication
 
 got to JWT, 
 need to store users with hashed pwd in db.
+
+Fixed issue with test based on:
+https://github.com/nestjs/nest/blob/master/sample/19-auth-jwt/src/auth/auth.service.spec.ts
+
+https://wanago.io/2020/05/25/api-nestjs-authenticating-users-bcrypt-passport-jwt-cookies/
+
+
+-----
+Add OpenAPI documentation
+https://docs.nestjs.com/openapi/introduction
