@@ -18,6 +18,7 @@ import { UsersModule } from './users/users.module';
         DATABASE_PASSWORD: Joi.string().required(),
         DATABASE_NAME: Joi.string().required(),
         PORT: Joi.number().default(3000),
+        JWT_SECRET: Joi.string().required(),
       }),
     }),
     DatabaseModule,
