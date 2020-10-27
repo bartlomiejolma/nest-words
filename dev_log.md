@@ -166,6 +166,10 @@ https://github.com/nestjs/nest/blob/master/sample/19-auth-jwt/src/auth/auth.serv
 https://wanago.io/2020/05/25/api-nestjs-authenticating-users-bcrypt-passport-jwt-cookies/
 
 
+Added jwt module using the registerAsync to get secret from config
+https://github.com/nestjs/jwt#async-options
+
+
 -----
 Add OpenAPI documentation
 https://docs.nestjs.com/openapi/introduction
