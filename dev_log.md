@@ -170,6 +170,9 @@ Added jwt module using the registerAsync to get secret from config
 https://github.com/nestjs/jwt#async-options
 
 
+curl -X POST http://localhost:3005/auth/login -d '{"username": "john", "password": "changeme"}' -H "Content-Type: application/json"
+
+curl http://localhost:3005/profile -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJzeWIiOjEsImlhdCI6MTYwMzgwMTU4OSwiZXhwIjoxNjAzODAxNjQ5fQ.uQAsneLArKl2IMCckpo-S1lkxrRncSD_EuH7AAfVZWk"
 -----
 Add OpenAPI documentation
 https://docs.nestjs.com/openapi/introduction
