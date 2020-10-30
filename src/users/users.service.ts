@@ -1,6 +1,10 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { QueryFailedError, Repository } from 'typeorm';
 
 import { UserEntity } from './user.entity';
 import { User } from './user.interface';
@@ -22,7 +26,13 @@ export class UsersService {
 
   async create(userData: User) {
     const newUser = await this.usersRepository.create(userData);
-    await this.usersRepository.save(newUser);
+    try {
+      await this.usersRepository.save(newUser);
+    } catch (error) {
+      if (error instanceof QueryFailedError) {
+        throw new BadRequestException(null, 'User already exists');
+      }
+    }
     return newUser;
   }
 }
