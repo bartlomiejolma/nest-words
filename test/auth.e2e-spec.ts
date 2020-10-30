@@ -18,18 +18,22 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  const user = {
-    email: faker.internet.email(),
-    name: faker.name.lastName(),
-    password: faker.internet.password(),
-  };
   it('Login and access private route', () => {
+    const user = {
+      email: faker.internet.email(),
+      name: faker.name.lastName(),
+      password: faker.internet.password(),
+    };
     return waterfall([
       cb =>
         request(app.getHttpServer())
           .post('/auth/register')
           .send(user)
           .expect(201, cb),
+      (results, cb) =>
+        request(app.getHttpServer())
+          .get('/profile')
+          .expect(401, cb),
       (results, cb) =>
         request(app.getHttpServer())
           .post('/auth/login')
