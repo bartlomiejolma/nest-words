@@ -181,6 +181,23 @@ Now needs to work on proper user save.
 https://wanago.io/2020/05/25/api-nestjs-authenticating-users-bcrypt-passport-jwt-cookies/
 bcrypt
 
+
+Get to the "Creating the authentication service"
+
+
+curl -X POST http://localhost:5000/auth/login -d '{"name": "test", "password": "pwd"}' -H "Content-Type: application/json"
+
+curl http://localhost:5000/profile -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJzeWIiOjEsImlhdCI6MTYwNDA4OTYyOSwiZXhwIjoxNjA0MDkwMjI5fQ.1KNQXx67jDP4knf-XdBtdEvkNTVWdCCGjpMTTcPaLWM"
+
+Added exclude from the:
+https://wanago.io/2020/06/08/api-nestjs-serializing-response-interceptors/
+
+Finished auth flow. 
+
+Next, refresh token:
+
+https://wanago.io/2020/09/21/api-nestjs-refresh-tokens-jwt/
+
 -----
 Add OpenAPI documentation
 https://docs.nestjs.com/openapi/introduction
