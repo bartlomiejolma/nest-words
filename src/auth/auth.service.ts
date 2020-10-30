@@ -14,11 +14,22 @@ export class AuthService {
 
   async validateUser(username: string, pass: string): Promise<any> {
     const user = await this.usersService.getByUsername(username);
-    if (user && user.password === pass) {
+    if (user && this.verifyPassword(pass, user.password)) {
       const { password, ...result } = user;
       return result;
     }
     return null;
+  }
+
+  private async verifyPassword(
+    plainTextPassword: string,
+    hashedPassword: string,
+  ) {
+    const isPasswordMatching = await bcrypt.compare(
+      plainTextPassword,
+      hashedPassword,
+    );
+    return isPasswordMatching;
   }
 
   public async register(user: User) {
