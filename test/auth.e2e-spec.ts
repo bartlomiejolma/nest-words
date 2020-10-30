@@ -23,23 +23,14 @@ describe('AppController (e2e)', () => {
     name: faker.name.lastName(),
     password: faker.internet.password(),
   };
-
-  it('/auth/register (POST)', () => {
-    return request(app.getHttpServer())
-      .post('/auth/register')
-      .send(user)
-      .expect(201);
-  });
-
-  it('/auth/login (POST)', () => {
-    return request(app.getHttpServer())
-      .post('/auth/login')
-      .send(user)
-      .expect(201);
-  });
   it('Login and access private route', () => {
     return waterfall([
       cb =>
+        request(app.getHttpServer())
+          .post('/auth/register')
+          .send(user)
+          .expect(201, cb),
+      (results, cb) =>
         request(app.getHttpServer())
           .post('/auth/login')
           .send(user)
@@ -49,6 +40,11 @@ describe('AppController (e2e)', () => {
           .get('/profile')
           .set('Authorization', `Bearer ${results.body.access_token}`)
           .expect(200, cb),
+      (results, cb) => {
+        const { body } = results;
+        expect(body.username).toBe(user.name);
+        cb(null, results);
+      },
     ]);
   });
 
