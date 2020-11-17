@@ -6,6 +6,7 @@ import { Word } from '../word';
 import { Definition } from '../definition';
 import { WordEntity } from '../entities/words.entity';
 import { DefinitionEntity } from '../entities/definitions.entity';
+import { DictionaryService } from '../../dictionary/dictionary.service';
 
 class InMemoryRepository<T> {
   private entries: T[];
@@ -20,6 +21,11 @@ class InMemoryRepository<T> {
     this.entries.push(entry);
   }
 }
+class MockDictionaryService {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  getDefinition() {}
+}
+
 describe('WordsService', () => {
   let wordsService: WordsService;
 
@@ -34,6 +40,10 @@ describe('WordsService', () => {
         {
           provide: getRepositoryToken(DefinitionEntity),
           useFactory: () => new InMemoryRepository<Definition>(),
+        },
+        {
+          provide: DictionaryService,
+          useClass: MockDictionaryService,
         },
       ],
     }).compile();
