@@ -33,6 +33,7 @@
     "@types/faker": "^5.1.2",
     "@types/hapi__joi": "^17.1.6",
     "async": "^3.2.0",
+    "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
