@@ -13,7 +13,7 @@ export class DefinitionEntity implements Definition {
   text: string;
 
   @ManyToOne(
-    type => WordEntity,
+    () => WordEntity,
     word => word.definitions,
   )
   word: Word;
