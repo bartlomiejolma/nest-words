@@ -5,7 +5,7 @@ import * as sampleResponse from './sample.response.json';
 
 class MockedDictionaryApi extends DictionaryApi {
   async getWord(word: string) {
-    return Promise.resolve({ word: word });
+    return Promise.resolve(sampleResponse);
   }
 }
 describe('DictionaryService', () => {
@@ -26,7 +26,7 @@ describe('DictionaryService', () => {
     expect(service).toBeDefined();
   });
 
-  it.skip('can parse sample word', () => {
+  it('can parse sample word', () => {
     const expectedParsedResponse = {
       name: 'commencement',
       phoneticSpelling: 'kəˈmɛnsm(ə)nt',
