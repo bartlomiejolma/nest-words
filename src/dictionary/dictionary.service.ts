@@ -50,18 +50,19 @@ export class DictionaryService {
         .phoneticSpelling;
     const lexicalCategory =
       apiResponse.results[0].lexicalEntries[0].lexicalCategory.text;
-    const definitions = apiResponse.results.flatMap((result: ApiSingleResult) =>
-      result.lexicalEntries.flatMap((lexicalEntry: ApiLexicalEntries) =>
-        lexicalEntry.entries.flatMap(entry =>
-          entry.senses.flatMap(sense => sense.definitions),
+    const definitions = apiResponse.results?.flatMap(
+      (result: ApiSingleResult) =>
+        result.lexicalEntries?.flatMap((lexicalEntry: ApiLexicalEntries) =>
+          lexicalEntry.entries?.flatMap(entry =>
+            entry.senses?.flatMap(sense => sense.definitions),
+          ),
         ),
-      ),
     );
-    const examples = apiResponse.results.flatMap((result: ApiSingleResult) =>
-      result.lexicalEntries.flatMap((lexicalEntry: ApiLexicalEntries) =>
-        lexicalEntry.entries.flatMap(entry =>
-          entry.senses.flatMap(sense =>
-            sense.examples.flatMap(example => example.text),
+    const examples = apiResponse.results?.flatMap((result: ApiSingleResult) =>
+      result.lexicalEntries?.flatMap((lexicalEntry: ApiLexicalEntries) =>
+        lexicalEntry.entries?.flatMap(entry =>
+          entry.senses?.flatMap(sense =>
+            sense.examples?.flatMap(example => example.text),
           ),
         ),
       ),
