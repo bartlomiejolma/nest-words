@@ -46,10 +46,10 @@ export class DictionaryService {
   parseApiResponse(apiResponse: ApiResponse) {
     const name = apiResponse.id;
     const phoneticSpelling =
-      apiResponse.results[0].lexicalEntries[0].entries[0].pronunciations[0]
-        .phoneticSpelling;
+      apiResponse?.results?.[0]?.lexicalEntries?.[0]?.entries?.[0]
+        ?.pronunciations?.[0]?.phoneticSpelling;
     const lexicalCategory =
-      apiResponse.results[0].lexicalEntries[0].lexicalCategory.text;
+      apiResponse?.results?.[0]?.lexicalEntries?.[0]?.lexicalCategory?.text;
     const definitions = apiResponse.results?.flatMap(
       (result: ApiSingleResult) =>
         result.lexicalEntries?.flatMap((lexicalEntry: ApiLexicalEntries) =>
