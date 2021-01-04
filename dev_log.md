@@ -187,6 +187,8 @@ Get to the "Creating the authentication service"
 
 curl -X POST http://localhost:5000/auth/login -d '{"name": "test", "password": "pwd"}' -H "Content-Type: application/json"
 
+curl -X POST http://localhost:5000/auth/register -d '{"name": "foo", "password": "pwdverylong", "email": "mail@email.com"}' -H "Content-Type: application/json"
+
 curl http://localhost:5000/profile -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJzeWIiOjEsImlhdCI6MTYwNDA4OTYyOSwiZXhwIjoxNjA0MDkwMjI5fQ.1KNQXx67jDP4knf-XdBtdEvkNTVWdCCGjpMTTcPaLWM"
 
 Added exclude from the:
