@@ -7,6 +7,8 @@ import { Definition } from '../definition';
 import { WordEntity } from '../entities/words.entity';
 import { DefinitionEntity } from '../entities/definitions.entity';
 import { DictionaryService } from '../../dictionary/dictionary.service';
+import { ExampleEntity } from '../entities/examples.entity';
+import { Example } from '../example';
 
 class InMemoryRepository<T> {
   private entries: T[];
@@ -40,6 +42,10 @@ describe('WordsService', () => {
         {
           provide: getRepositoryToken(DefinitionEntity),
           useFactory: () => new InMemoryRepository<Definition>(),
+        },
+        {
+          provide: getRepositoryToken(ExampleEntity),
+          useFactory: () => new InMemoryRepository<Example>(),
         },
         {
           provide: DictionaryService,
