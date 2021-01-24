@@ -203,3 +203,12 @@ https://wanago.io/2020/09/21/api-nestjs-refresh-tokens-jwt/
 -----
 Add OpenAPI documentation
 https://docs.nestjs.com/openapi/introduction
+
+
+-----
+Next: add exercises module
+
+have a way to post (start)
+then post on /answer
+and get a /result
+hateos in links?
