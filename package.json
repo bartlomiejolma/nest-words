@@ -32,7 +32,7 @@
     "@nestjs/typeorm": "^7.1.0",
     "@types/faker": "^5.1.2",
     "@types/hapi__joi": "^17.1.6",
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.0",
     "class-transformer": "^0.3.1",
